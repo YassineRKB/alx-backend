@@ -43,7 +43,7 @@ class Server:
         assert isinstance(index, int) and index >= 0
         indexNext = index + page_size
         indexData = self.indexed_dataset()
-        res ={
+        res = {
                 'index': index,
                 'next_index': indexNext,
                 'page_size': page_size,
