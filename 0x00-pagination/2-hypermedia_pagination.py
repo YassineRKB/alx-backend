@@ -42,7 +42,7 @@ class Server:
         if start > len(data):
             return []
         return data[start:end]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Finds the correct indexes to paginate dataset correctly"""
         all_pages = ceil(len(self.dataset()) / page_size)
