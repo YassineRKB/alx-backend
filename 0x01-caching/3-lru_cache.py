@@ -14,14 +14,14 @@ class LRUCache(BaseCaching):
     def put(self, key, item):
         """doc for put method"""
         if key is not None and item is not None:
-            if key not in self.cache_data:
+            if key in self.cache_data:
+                self.cache_data[key] = item
+            else:
                 if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
                     lru_key, _ = self.cache_data.popitem(True)
                     print("DISCARD:", lru_key)
                 self.cache_data[key] = item
                 self.cache_data.move_to_end(key, last=False)
-            else:
-                self.cache_data[key] = item
         else:
             return
 
