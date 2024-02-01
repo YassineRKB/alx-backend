@@ -33,4 +33,4 @@ class MRUCache(BaseCaching):
                 self.cache_data.move_to_end(key, last=True)
             return self.cache_data[key]
         except KeyError:
-            return NoneW
+            return None
