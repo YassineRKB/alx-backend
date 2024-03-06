@@ -13,7 +13,5 @@ const Hasj = {
   Cali: 40,
   Paris: 2,
 };
-
 for (let key in Hasj) client.hmset("HolbertonSchools", key, Hasj[key], redis.print);
-
 client.hgetall("HolbertonSchools", (err, res) => console.log(res));
